@@ -1,1 +1,1 @@
-# template-sample-typescript
+# template-blank-typescript
