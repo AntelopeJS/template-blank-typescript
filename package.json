@@ -1,25 +1,27 @@
 {
-  "name": "antelopejs-module",
-  "private": true,
-  "version": "0.0.1",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev": "ajs project run -w"
-  },
-  "devDependencies": {
-    "@antelopejs/core": "^0.0.2",
-    "typescript": "^5.8.3"
-  },
-  "antelopeJs": {
-    "imports": [
-      "core@beta"
-    ],
-    "baseUrl": "dist",
-    "paths": {
-      "@/*": [
-        "*"
-      ]
-    }
-  },
-  "packageManager": "pnpm@10.6.5"
+	"name": "antelopejs-module",
+	"private": true,
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"scripts": {
+		"postinstall": "ajs module imports update",
+		"dev": "ajs project run -w"
+	},
+	"devDependencies": {
+		"@antelopejs/core": "^0.0.2",
+		"typescript": "^5.8.3"
+	},
+	"antelopeJs": {
+		"imports": [
+			"core@beta"
+		],
+		"baseUrl": "dist",
+		"paths": {
+			"@/*": [
+				"*"
+			]
+		},
+		"importsOptional": []
+	},
+	"packageManager": "pnpm@10.6.5"
 }
