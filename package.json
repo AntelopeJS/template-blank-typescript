@@ -7,7 +7,6 @@
     "dev": "ajs project run -w"
   },
   "devDependencies": {
-    "@antelopejs/core": "^0.0.2",
     "typescript": "^5.8.3"
   },
   "antelopeJs": {
