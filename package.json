@@ -4,12 +4,13 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rimraf dist && tsc",
     "prepare": "ajs module imports install",
     "dev": "ajs project run -w"
   },
   "devDependencies": {
     "@types/node": "^24.0.10",
+    "rimraf": "^6.0.1",
     "typescript": "^5.8.3"
   },
   "antelopeJs": {
