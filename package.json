@@ -5,17 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "prepare": "ajs module imports install",
     "dev": "ajs project run -w"
   },
   "devDependencies": {
-    "@types/node": "^24.0.10",
-    "typescript": "^5.8.3"
+    "@types/node": "^24.12.0",
+    "typescript": "^5.9.3"
   },
   "antelopeJs": {
-    "imports": [
-      "core@beta"
-    ],
     "baseUrl": "dist",
     "paths": {
       "@/*": [
