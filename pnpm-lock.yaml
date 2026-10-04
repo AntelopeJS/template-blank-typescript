@@ -12,6 +12,9 @@ importers:
         specifier: '>=0.0.6 <1.0.0'
         version: 0.0.11
     devDependencies:
+      '@types/mocha':
+        specifier: ^10.0.10
+        version: 10.0.10
       '@types/node':
         specifier: ^24.12.0
         version: 24.12.0
@@ -26,6 +29,9 @@ packages:
 
   '@antelopejs/interface-core@0.0.11':
     resolution: {integrity: sha512-eKE3F9XY0eIzdLBXms8QAY4BHmA8+XXZnta0vZ411q9GiSbI2S1Q3lfYzmnXU4ZK9i+/SIYPplOsA02gIdxODg==}
+
+  '@types/mocha@10.0.10':
+    resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
   '@types/node@24.12.0':
     resolution: {integrity: sha512-GYDxsZi3ChgmckRT9HPU0WEhKLP08ev/Yfcq2AstjrDASOYCSXeyjDsHg4v5t4jOj7cyDX3vmprafKlWIG9MXQ==}
@@ -82,6 +88,8 @@ snapshots:
   '@antelopejs/interface-core@0.0.11':
     dependencies:
       reflect-metadata: 0.2.2
+
+  '@types/mocha@10.0.10': {}
 
   '@types/node@24.12.0':
     dependencies:
