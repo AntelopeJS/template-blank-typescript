@@ -26,7 +26,10 @@ A minimal starter template for creating AntelopeJS modules with TypeScript. This
 ```
 src/
 └── index.ts              # Module entry point with lifecycle hooks
+test/
+└── example.test.ts       # Module tests
 antelope.config.ts        # AntelopeJS project configuration
+antelope.test.ts          # Test configuration
 package.json
 tsconfig.json
 ```
@@ -38,12 +41,24 @@ The module entry point exports four lifecycle hooks:
 - `stop()` — Called to deactivate the module.
 - `destroy()` — Called to release all resources.
 
+## Tests
+
+`antelope.test.ts` is the test configuration that `antelopeJs.test` points to in `package.json`. It loads the module itself, built with `tsc`, and runs the `*.test.ts` files of the `test/` folder with Mocha:
+
+```bash
+pnpm test
+```
+
+If you rename the module, rename it in `antelope.test.ts` too. Type annotations in the `.ts` test files rely on the type stripping of Node.js, enabled by default from Node.js 22.18.
+
 ## Available scripts
 
 - `pnpm run build` — Build the module for distribution.
 - `pnpm run dev` — Start development mode with watch.
+- `pnpm test` — Run the module tests with `ajs module test`.
 
 ## Learn more
 
 - [AntelopeJS Documentation](https://antelopejs.com/docs/get-started)
 - [Module Architecture](https://antelopejs.com/docs/interfaces/module-management)
+- [Testing](https://antelopejs.com/docs/module-development/testing)
