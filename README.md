@@ -24,7 +24,7 @@ my-app/
 
 ## Create it
 
-Install the CLI once with `npm install -g @antelopejs/core`, then create a project from this template:
+Install the CLI once with `pnpm add -g @antelopejs/core`, then create a project from this template:
 
 ```bash
 ajs project init my-app --template "Blank Typescript"
