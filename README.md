@@ -41,11 +41,11 @@ ajs project dev --watch
 
 The project builds the module with `tsc` and rebuilds it when a file of `src/` changes. `pnpm dev` runs the same command.
 
-| Command | What it does |
-| --- | --- |
-| `pnpm dev` | Runs the project in watch mode |
-| `pnpm build` | Builds the module into `dist/` |
-| `pnpm test` | Builds the module, starts it, and runs the `test/*.test.ts` files with `ajs module test` |
+| Command      | What it does                                                                             |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| `pnpm dev`   | Runs the project in watch mode                                                           |
+| `pnpm build` | Builds the module into `dist/`                                                           |
+| `pnpm test`  | Builds the module, starts it, and runs the `test/*.test.ts` files with `ajs module test` |
 
 If you rename the module in `package.json`, rename it in `antelope.config.ts` and `antelope.test.ts` too.
 
@@ -61,7 +61,7 @@ Using Claude Code or Codex? Install the [AntelopeJS agent skills plugin](https:/
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md). Run `pnpm install` then `pnpm test` before you open a pull request.
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Run `pnpm install` then `pnpm run checks` before you open a pull request. It runs the typecheck, lint, format, knip, the tests, and the guardrail checks, the same as CI.
 
 ## License
 
