@@ -1,6 +1,6 @@
 # antelopejs-module
 
-An AntelopeJS module in TypeScript, created from the Blank Typescript template (AntelopeJS/template-blank-typescript). `ajs project init` copies every file of the template except `.git` into the new project, so a change to the template reaches every project created after it.
+An AntelopeJS module in TypeScript, created from the Blank Typescript template (AntelopeJS/template-blank-typescript). `ajs project init` copies every file of the template except `.git` into the new project.
 
 ## Layout
 
@@ -9,13 +9,18 @@ An AntelopeJS module in TypeScript, created from the Blank Typescript template (
 
 ## Versioning
 
-The module only calls `@antelopejs/interface-core`, so its range stays wide (`>=0.0.6 <1.0.0`). Raise the floor when the module needs a newer interface; keep the `<1.0.0` cap.
+`@antelopejs/interface-core` stays `>=<floor> <1.0.0`: the core loads one copy of each interface and refuses to start a module whose range excludes it. Raise only the floor. `pnpm exec antelopejs-check-interface-ranges` checks the ranges; `checks` does not run it.
 
 ## Tests
 
-- `pnpm test` runs `ajs module test` with `@antelopejs/core` from the devDependencies: it compiles the module with `npx tsc` (the `installCommand` of `antelope.test.ts`), loads and starts it, then runs `test/*.test.ts` with mocha against `dist`. `pnpm run checks` runs it.
+- `pnpm test` runs `ajs module test` with `@antelopejs/core` from the devDependencies: it compiles the module with `npx tsc` (the `installCommand` of `antelope.test.ts`), loads and starts it, then runs the `*.test.ts` and `*.spec.ts` files under `test/` with mocha against `dist`. `pnpm run checks` runs it.
 - `typecheck` covers `src/` only. The tests run the files of `test/` and `antelope.test.ts` without a type check, so a type error there passes `checks`.
 - `knip.config.ts` ignores `@types/mocha`, which only the test globals use.
+
+## Guardrails setup
+
+- `pnpm run checks` and the lefthook hooks need a git repository. `ajs project init` installs the dependencies before it runs `git init`, so run `pnpm install` once more after `git init` to install the hooks.
+- `guardrails.ratchet.json` records the three findings of the sample `test/example.test.ts`. Those rules are off for `oxlint`; `pnpm run ratchet` counts them instead. After you replace the sample test, run `pnpm run ratchet:update` and commit the lowered file.
 
 <!-- antelopejs-guardrails:start -->
 <!-- Managed by @antelopejs/tooling-configs. `antelopejs-sync` rewrites everything between these markers; write repository-specific guidance outside them. -->
