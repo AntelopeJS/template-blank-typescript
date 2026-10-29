@@ -19,9 +19,8 @@ An AntelopeJS module in TypeScript, created from the Blank Typescript template (
 
 ## Guardrails setup
 
-- `pnpm run checks` needs a git repository: its `size`, `ratchet`, `suppressions` and `sync:check` steps fail outside one. `ajs project init` creates one unless you decline or pass `--no-git-init`; then run `git init` first.
+- `pnpm run checks` needs a git repository: its `size`, `suppressions` and `sync:check` steps fail outside one. `ajs project init` creates one unless you decline or pass `--no-git-init`; then run `git init` first.
 - `guardrails.suppressions.json` caps the lint directives, `@ts-expect-error` and `SAFETY:` comments; its numbers only go down. Fix the code rather than add a suppression.
-- `guardrails.ratchet.json` records the one finding of the sample `test/example.test.ts`, a `no-comments` line. That rule is off for `oxlint`; `pnpm run ratchet` counts it instead. After you replace the sample test, run `pnpm run ratchet:update` and commit the lowered file.
 
 <!-- antelopejs-guardrails:start -->
 <!-- Managed by @antelopejs/tooling-configs. `antelopejs-sync` rewrites everything between these markers; write repository-specific guidance outside them. -->

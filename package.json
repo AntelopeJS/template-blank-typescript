@@ -14,8 +14,6 @@
     "knip": "knip",
     "checks": "antelopejs-checks",
     "size": "antelopejs-check-size",
-    "ratchet": "antelopejs-ratchet",
-    "ratchet:update": "antelopejs-ratchet --update",
     "sync": "antelopejs-sync --profile template",
     "sync:check": "antelopejs-sync --profile template --check",
     "suppressions": "antelopejs-suppressions",
