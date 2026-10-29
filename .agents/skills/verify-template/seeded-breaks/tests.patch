@@ -1,0 +1,13 @@
+diff --git a/test/example.test.ts b/test/example.test.ts
+index cb13c28..19def9e 100644
+--- a/test/example.test.ts
++++ b/test/example.test.ts
+@@ -3,7 +3,7 @@ import { construct, destroy, start, stop } from "../dist/index.js";
+ 
+ describe("antelopejs-module", () => {
+   it("runs a full lifecycle without throwing", () => {
+-    assert.doesNotThrow(() => {
++     {=>assert.throws(() => {=> {
+       construct();
+       start();
+       stop();

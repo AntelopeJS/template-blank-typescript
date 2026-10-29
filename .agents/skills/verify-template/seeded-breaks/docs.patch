@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 64126dc..dee6178 100644
+--- a/README.md
++++ b/README.md
+@@ -43,7 +43,7 @@ The project builds the module with `tsc` and rebuilds it when a file of `src/` c
+ 
+ | Command      | What it does                                                                             |
+ | ------------ | ---------------------------------------------------------------------------------------- |
+-| `pnpm dev`   | Runs the project in watch mode                                                           |
++| `pnpm serve` | Runs the project in watch mode                                                           |
+ | `pnpm build` | Builds the module into `dist/`                                                           |
+ | `pnpm test`  | Builds the module, starts it, and runs the `test/*.test.ts` files with `ajs module test` |
+ 

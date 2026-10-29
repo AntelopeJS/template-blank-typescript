@@ -1,0 +1,13 @@
+diff --git a/tsconfig.json b/tsconfig.json
+index b962baa..7889cd5 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -18,7 +18,7 @@
+     "declaration": true,
+     "sourceMap": true,
+     "useDefineForClassFields": true,
+-    "noUnusedLocals": true,
++    "noUnusedLocals": false,
+     "noUnusedParameters": true,
+     "rootDir": "src"
+   },

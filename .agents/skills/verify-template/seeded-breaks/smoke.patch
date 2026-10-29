@@ -1,0 +1,14 @@
+diff --git a/src/index.ts b/src/index.ts
+index 7f4ab47..9e8bcc7 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -1,6 +1,8 @@
+ export function construct(): void {}
+ 
+-export function start(): void {}
++export function start(): void {
++  throw new Error("not configured");
++}
+ 
+ export function destroy(): void {}
+ 
