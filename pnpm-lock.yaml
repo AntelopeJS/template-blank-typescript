@@ -10,11 +10,11 @@ importers:
     dependencies:
       '@antelopejs/interface-core':
         specifier: '>=0.0.6 <1.0.0'
-        version: 0.0.11
+        version: 0.3.0
     devDependencies:
       '@antelopejs/core':
-        specifier: ^1.17.1
-        version: 1.17.1
+        specifier: ^1.19.0
+        version: 1.19.0
       '@antelopejs/tooling-configs':
         specifier: ^0.2.17
         version: 0.2.17(knip@6.43.0)(oxfmt@0.66.0)(oxlint@1.81.0(oxlint-tsgolint@7.0.2005))
@@ -45,16 +45,13 @@ importers:
 
 packages:
 
-  '@antelopejs/core@1.17.1':
-    resolution: {integrity: sha512-gul38oMJuiaLl5MEwinRbM6d08uPI2wqCmDDrI5V+VilcxJA025VF1l1CqNta3xQfszvRr/jt4RzOgUlhKJi/g==}
+  '@antelopejs/core@1.19.0':
+    resolution: {integrity: sha512-o6vlUIjnseM0QQGOzE54wsjNgi3RFkGYtxESfe0NrVMwR0OYhJcP6czJd3Zrv4D2mxeIRqWFSv78phDDWMkN/Q==}
     engines: {node: '>=20.19'}
     hasBin: true
 
-  '@antelopejs/interface-core@0.0.11':
-    resolution: {integrity: sha512-eKE3F9XY0eIzdLBXms8QAY4BHmA8+XXZnta0vZ411q9GiSbI2S1Q3lfYzmnXU4ZK9i+/SIYPplOsA02gIdxODg==}
-
-  '@antelopejs/interface-core@0.2.6':
-    resolution: {integrity: sha512-PJp58D1snKLVEmpfn9Yj2htuohZhUxHqyyec3xtkPPy61mtACs0YznnhcgbYQNhIy/q8J+lSwDICPZIsKjhAIA==}
+  '@antelopejs/interface-core@0.3.0':
+    resolution: {integrity: sha512-GeGclCe5JOg+9H7XvTxYmE78u9tHG7QpVddHkB11kSgjNKq1hXqbEXPv0BRKQD9jjiV594qr1HuFuuYp4aqCZQ==}
 
   '@antelopejs/tooling-configs@0.2.17':
     resolution: {integrity: sha512-8fwh7xQPzazP/l/ivEwRKpfN8qShV9+PRizpI9cBewe2TwoRPu4n95w6sYSlygiRmm0HxLJYZFhmSPRgtiNo1Q==}
@@ -603,8 +600,8 @@ packages:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
 
-  ansi-regex@6.4.0:
-    resolution: {integrity: sha512-KzTVk2tCWAHtYrvvvaP8bJKJq2pVinhLcGEQdtLIYPbmNGNyYe8QwNaTUYQp2J7/vIsUKt5QCqAfUkYyG9DkOw==}
+  ansi-regex@6.5.0:
+    resolution: {integrity: sha512-zhvbbbdt1kbw7EJ9OQoxmQcuaNR9P5kTj7e/YdmOSU10aHWbycofJxA6jKfoEy3vlLdctOF9ZHaxLtmSm998wQ==}
     engines: {node: '>=12'}
 
   ansi-styles@4.3.0:
@@ -1287,9 +1284,9 @@ packages:
 
 snapshots:
 
-  '@antelopejs/core@1.17.1':
+  '@antelopejs/core@1.19.0':
     dependencies:
-      '@antelopejs/interface-core': 0.2.6
+      '@antelopejs/interface-core': 0.3.0
       '@clack/prompts': 1.8.1
       '@types/proper-lockfile': 4.1.4
       commander: 13.1.0
@@ -1302,11 +1299,7 @@ snapshots:
       semver: 7.8.5
       typescript: 5.9.3
 
-  '@antelopejs/interface-core@0.0.11':
-    dependencies:
-      reflect-metadata: 0.2.2
-
-  '@antelopejs/interface-core@0.2.6':
+  '@antelopejs/interface-core@0.3.0':
     dependencies:
       reflect-metadata: 0.2.2
 
@@ -1641,7 +1634,7 @@ snapshots:
 
   ansi-regex@5.0.1: {}
 
-  ansi-regex@6.4.0: {}
+  ansi-regex@6.5.0: {}
 
   ansi-styles@4.3.0:
     dependencies:
@@ -2276,7 +2269,7 @@ snapshots:
 
   strip-ansi@7.2.0:
     dependencies:
-      ansi-regex: 6.4.0
+      ansi-regex: 6.5.0
 
   strip-json-comments@3.1.1: {}
 
