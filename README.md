@@ -24,19 +24,19 @@ my-app/
 
 ## Create it
 
-Install the CLI once with `pnpm add -g @antelopejs/core`, then create a project from this template:
+Create a project from this template:
 
 ```bash
-ajs project init my-app --template "Blank Typescript"
+npx @antelopejs/core project init my-app --template blank-typescript
 ```
 
-The command copies the template, installs its dependencies, and writes an `antelope.config.ts` that loads the module from the project root. Run `ajs project init my-app` without flags to answer the questions interactively.
+The command copies the template, installs its dependencies, and writes an `antelope.config.ts` that loads the module from the project root. Run `npx @antelopejs/core project init my-app` without flags to answer the questions interactively.
 
 ## Run it
 
 ```bash
 cd my-app
-ajs project dev --watch
+npx @antelopejs/core project dev --watch
 ```
 
 The project builds the module with `tsc` and rebuilds it when a file of `src/` changes. `pnpm dev` runs the same command.
