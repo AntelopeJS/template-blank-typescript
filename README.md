@@ -1,12 +1,12 @@
-# AntelopeJS Blank TypeScript Template
+# AntelopeJS blank TypeScript template
 
 <div align="center">
-<a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-000000?style=for-the-badge&labelColor=000000"></a>
-<a href="https://discord.gg/g4pFt6eXqu"><img src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000" alt="Discord"></a>
-<a href="https://framework.antelopejs.com/docs/get-started/quick-start"><img src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000" alt="Documentation"></a>
+<a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-000000?style=for-the-badge&labelColor=000000" data-illustration></a>
+<a href="https://discord.gg/g4pFt6eXqu"><img src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000" alt="Discord" data-illustration></a>
+<a href="https://framework.antelopejs.com/docs/get-started/quick-start"><img src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000" alt="Documentation" data-illustration></a>
 </div>
 
-The smallest AntelopeJS module in TypeScript: the four lifecycle hooks, a build, and a test setup. It is the default template of `ajs project init`.
+The smallest AntelopeJS module in TypeScript, with the four lifecycle hooks, a build, and a test setup. It is the default template of `ajs project init`.
 
 ## What you get
 
