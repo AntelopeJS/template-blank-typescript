@@ -40,7 +40,6 @@ const config: VerifyConfig = {
     exposure: {
       globs: [".gitignore", ".npmrc"],
       funnels: [],
-      containments: [],
       why: "every project scaffolded from the template inherits what git and npm leave out; a dropped .env line commits secrets in projects a revert never reaches",
     },
     publish: null,
