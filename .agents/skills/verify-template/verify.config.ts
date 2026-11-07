@@ -14,17 +14,19 @@ import {
 
 const HOOKS = "construct,destroy,start,stop";
 
-/** Scaffolds a project from the template with `ajs project init` and installs it; returns its folder. */
+/** Returns the journey's own copy of a project scaffolded from the template with `ajs project init`, installed unless `install` is false; the run scaffolds each kind once. */
 async function scaffolded(context: JourneyContext, install = true): Promise<string> {
-  const project = join(context.work, "app");
-  const init = await context.scaffold("ajs project init", project);
-  context.expect(init.folder, [exitIs(init, 0), exists(join(project, "antelope.config.ts"))], { critical: true });
-  context.tree("scaffolded tree", project);
-  if (install) {
-    const done = await context.command("pnpm install", "pnpm", ["install", "--frozen-lockfile", "--prefer-offline"], { cwd: project });
-    context.expect(done.folder, [exitIs(done, 0)], { critical: true });
-  }
-  return project;
+  const root = await context.prepared(install ? "installed-app" : "scaffolded-app", async (folder) => {
+    const project = join(folder, "app");
+    const init = await context.scaffold("ajs project init", project);
+    context.expect(init.folder, [exitIs(init, 0), exists(join(project, "antelope.config.ts"))], { critical: true });
+    context.tree("scaffolded tree", project);
+    if (install) {
+      const done = await context.command("pnpm install", "pnpm", ["install", "--frozen-lockfile", "--prefer-offline"], { cwd: project });
+      context.expect(done.folder, [exitIs(done, 0)], { critical: true });
+    }
+  });
+  return join(root, "app");
 }
 
 function manifestOf(project: string): { name?: string; main?: string; scripts?: Record<string, string>; antelopeJs?: { baseUrl?: string; test?: string } } {
