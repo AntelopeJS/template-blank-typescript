@@ -11,7 +11,6 @@ docs:
   - CONTRIBUTING.md
   - AGENTS.md
 journeys:
-  - scaffold-lint
   - scaffold-lint-rejects
   - scaffold-checks
 ---
@@ -22,9 +21,8 @@ The guardrail configuration the user inherits: TypeScript, lint, format, knip, t
 
 ## Sub-features
 
-- `scaffold-lint`: `typecheck`, `lint` and `knip` pass in the scaffold.
 - `scaffold-lint-rejects`: an unused local fails the typecheck and a `debugger` statement fails lint, so the configs are live.
-- `scaffold-checks`: `pnpm run checks` passes before the user changes anything. **This journey fails on head** for two reasons outside this repository. `ajs project init` writes an `antelope.config.ts` that `oxfmt --check` rejects (draft: antelopejs-init-config-fails-format-check.md). `ajs project init` also leaves out `.agents` and `.claude/skills`, so `sync:check` reports the synced agent skills as drift.
+- `scaffold-checks`: `pnpm run checks` passes before the user changes anything, its summary skips no step, and no `typecheck`, `lint` or `knip` failure appears in its output, so those three read on their own even while another step fails. **This journey fails on head** for two reasons outside this repository. `ajs project init` writes an `antelope.config.ts` that `oxfmt --check` rejects (draft: antelopejs-init-config-fails-format-check.md). `ajs project init` also leaves out `.agents` and `.claude/skills`, so `sync:check` reports the synced agent skills as drift.
 
 ## How to get to it (user POV)
 

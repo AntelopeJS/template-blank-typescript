@@ -8,6 +8,7 @@ import {
   fileHas,
   has,
   type JourneyContext,
+  lacks,
   type VerifyConfig,
 } from "@antelopejs/tooling-configs/verify";
 
@@ -106,17 +107,6 @@ const config: VerifyConfig = {
         context.expect(test.folder, [equal("the run failed", test.exitCode !== 0, true), has("output", test.stdout + test.stderr, /verify-broken/), has("output", test.stdout, /1 failing/)]);
       },
     },
-    "scaffold-lint": {
-      title: "the scaffolded project passes its typecheck, lint and knip",
-      entryPoint: "`pnpm run typecheck`, `pnpm run lint` and `pnpm run knip`",
-      async run(context) {
-        const project = await scaffolded(context);
-        for (const script of ["typecheck", "lint", "knip"]) {
-          const done = await context.command(`pnpm run ${script}`, "pnpm", ["run", script], { cwd: project });
-          context.expect(done.folder, [exitIs(done, 0)]);
-        }
-      },
-    },
     "scaffold-lint-rejects": {
       title: "typecheck rejects an unused local, and lint rejects a debugger statement, so the configs are live",
       entryPoint: "`pnpm run typecheck` and `pnpm run lint` after editing `src/index.ts`",
@@ -131,12 +121,16 @@ const config: VerifyConfig = {
       },
     },
     "scaffold-checks": {
-      title: "the scaffolded project passes `pnpm run checks`, as it must before the user changes anything",
+      title: "the scaffolded project passes `pnpm run checks`, typecheck, lint and knip included, as it must before the user changes anything",
       entryPoint: "`pnpm run checks` in the scaffolded project",
       async run(context) {
         const project = await scaffolded(context);
         const checks = await context.command("pnpm run checks", "pnpm", ["run", "checks"], { cwd: project });
-        context.expect(checks.folder, [exitIs(checks, 0)]);
+        context.expect(checks.folder, [
+          exitIs(checks, 0),
+          has("no step was skipped", checks.stdout, /Checks: \d+ passed, \d+ failed\.\n/),
+          ...["typecheck", "lint", "knip"].map((step) => lacks(`no ${step} failure`, checks.stdout, new RegExp(`^\\[${step}\\]`, "m"))),
+        ]);
       },
     },
     "scaffold-docs": {
