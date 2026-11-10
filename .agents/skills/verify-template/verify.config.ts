@@ -29,9 +29,11 @@ async function scaffolded(context: JourneyContext, install = true): Promise<stri
   return join(root, "app");
 }
 
-function manifestOf(project: string): { name?: string; main?: string; scripts?: Record<string, string>; antelopeJs?: { baseUrl?: string; test?: string } } {
-  // SAFETY: the scaffolded package.json is the template's own JSON manifest.
-  return JSON.parse(readFileSync(join(project, "package.json"), "utf8")) as ReturnType<typeof manifestOf>;
+/** Returns the script names `pnpm run` lists in the project, as a user discovers them. */
+async function scriptsOf(context: JourneyContext, project: string): Promise<string[]> {
+  const listed = await context.command("pnpm run", "pnpm", ["run"], { cwd: project });
+  context.expect(listed.folder, [exitIs(listed, 0)], { critical: true });
+  return [...listed.stdout.matchAll(/^ {2}(\S+)$/gm)].map((match) => match[1] ?? "");
 }
 
 const config: VerifyConfig = {
@@ -57,13 +59,14 @@ const config: VerifyConfig = {
       entryPoint: "`ajs project init my-app --template \"Blank Typescript\"`",
       async run(context) {
         const project = await scaffolded(context, false);
-        const manifest = manifestOf(project);
+        const scripts = await scriptsOf(context, project);
+        const manifest = join(project, "package.json");
         context.expect(context.tree("scaffolded files", project).folder, [
-          equal("the module name", manifest.name, "antelopejs-module"),
-          equal("the entry is the compiled module", manifest.main, "dist/index.js"),
-          equal("the runtime reads dist", manifest.antelopeJs?.baseUrl, "dist"),
-          equal("the test config is named", manifest.antelopeJs?.test, "antelope.test.ts"),
-          equal("every documented script exists", ["dev", "build", "test", "checks", "typecheck", "lint"].filter((name) => !manifest.scripts?.[name]), []),
+          fileHas(manifest, /"name": "antelopejs-module"/),
+          fileHas(manifest, /"main": "dist\/index\.js"/),
+          fileHas(manifest, /"baseUrl": "dist"/),
+          fileHas(manifest, /"test": "antelope\.test\.ts"/),
+          equal("every documented script exists", ["dev", "build", "test", "checks", "typecheck", "lint"].filter((name) => !scripts.includes(name)), []),
           exists(join(project, "src/index.ts")),
           exists(join(project, "test/example.test.ts")),
           exists(join(project, "antelope.test.ts")),
@@ -140,13 +143,13 @@ const config: VerifyConfig = {
       entryPoint: "reading `README.md` and `CONTRIBUTING.md` of the scaffolded project",
       async run(context) {
         const project = await scaffolded(context, false);
-        const scripts = manifestOf(project).scripts ?? {};
+        const scripts = await scriptsOf(context, project);
         const readme = readFileSync(join(project, "README.md"), "utf8");
         const contributing = readFileSync(join(project, "CONTRIBUTING.md"), "utf8");
         const named = [...new Set([...readme.matchAll(/`pnpm (?:run )?([a-z:]+)`/g)].map((match) => match[1] ?? ""))].filter((name) => name !== "install" && name !== "add");
         const tree = context.tree("scaffolded files", project);
         context.expect(tree.folder, [
-          equal("README commands without a script", named.filter((name) => !scripts[name]), []),
+          equal("README commands without a script", named.filter((name) => !scripts.includes(name)), []),
           equal("README names at least dev, build and test", ["dev", "build", "test"].filter((name) => !named.includes(name)), []),
           has("README", readme, /antelope\.config\.ts/),
           has("CONTRIBUTING", contributing, /./),
