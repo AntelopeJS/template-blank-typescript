@@ -7,7 +7,7 @@ export default defineConfig({
       source: {
         type: "local",
         path: ".",
-        installCommand: ["npx tsc"],
+        installCommand: ["node node_modules/typescript/bin/tsc"],
       },
     },
   },

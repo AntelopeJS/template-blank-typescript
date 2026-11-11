@@ -13,7 +13,7 @@ An AntelopeJS module in TypeScript, created from the Blank Typescript template (
 
 ## Tests
 
-- `pnpm test` runs `ajs module test` with `@antelopejs/core` from the devDependencies: it compiles the module with `npx tsc` (the `installCommand` of `antelope.test.ts`), loads and starts it, then runs the `*.test.ts` and `*.spec.ts` files under `test/` with mocha against `dist`. `pnpm run checks` runs it.
+- `pnpm test` runs `ajs module test` with `@antelopejs/core` from the devDependencies: it compiles the module with the project's own `tsc`, run by `node` without `npx` (the `installCommand` of `antelope.test.ts`), loads and starts it, then runs the `*.test.ts` and `*.spec.ts` files under `test/` with mocha against `dist`. `pnpm run checks` runs it.
 - `typecheck` covers `src/` only. The tests run the files of `test/` and `antelope.test.ts` without a type check, so a type error there passes `checks`.
 - `knip.config.ts` ignores `@types/mocha`, which only the test globals use.
 
