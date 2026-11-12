@@ -1,9 +1,15 @@
-# AntelopeJS blank TypeScript template
+<a href="https://github.com/AntelopeJS/antelopejs"><img data-illustration src="./.github/readme/strip.svg" width="100%" alt="TEMPLATE · BLANK TYPESCRIPT: part of AntelopeJS, hexagonal architecture beyond your own code. A glowing button reads Star AntelopeJS."></a>
 
 <div align="center">
-<a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-000000?style=for-the-badge&labelColor=000000" data-illustration></a>
-<a href="https://discord.gg/g4pFt6eXqu"><img src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000" alt="Discord" data-illustration></a>
-<a href="https://framework.antelopejs.com/docs/get-started/quick-start"><img src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000" alt="Documentation" data-illustration></a>
+
+# AntelopeJS blank TypeScript template
+
+<a href="./LICENSE"><img data-illustration alt="License" src="https://img.shields.io/badge/License-Apache_2.0-000000?style=for-the-badge&labelColor=000000"></a> <a href="https://discord.gg/g4pFt6eXqu"><img data-illustration alt="Discord" src="https://img.shields.io/badge/Discord-18181B?logo=discord&style=for-the-badge&color=000000"></a> <a href="https://framework.antelopejs.com/docs/get-started/quick-start"><img data-illustration alt="Documentation" src="https://img.shields.io/badge/Docs-18181B?style=for-the-badge&color=000000"></a> <a href="https://github.com/AntelopeJS/antelopejs"><img data-illustration alt="Star AntelopeJS" src="https://img.shields.io/github/stars/AntelopeJS/antelopejs?label=Star%20AntelopeJS&style=for-the-badge&labelColor=000000&color=000000&logo=github"></a>
+
+**Blank TypeScript template for an AntelopeJS module.**
+
+[Documentation](https://framework.antelopejs.com/docs/get-started/quick-start) · [All interfaces and providers](https://github.com/AntelopeJS/antelopejs#ecosystem)
+
 </div>
 
 The smallest AntelopeJS module in TypeScript, with the four lifecycle hooks, a build, and a test setup. It is the default template of `ajs project init`.
@@ -62,6 +68,10 @@ Using Claude Code or Codex? Install the [AntelopeJS agent skills plugin](https:/
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md). Run `pnpm install` then `pnpm run checks` before you open a pull request. It runs the typecheck, lint, format, knip, the tests, and the guardrail checks, the same as CI.
+
+## Part of AntelopeJS
+
+This template belongs to [AntelopeJS](https://github.com/AntelopeJS/antelopejs), the TypeScript framework where modules depend on contracts and the application chooses the provider. The open-source back office [AntelopeJS DMS](https://github.com/AntelopeJS/dms) is built on it.
 
 ## License
 
