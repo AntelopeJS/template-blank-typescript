@@ -2,6 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": "..",
+    "rootDirs": ["../src", "../dist"],
     "types": ["node", "mocha"],
     "noEmit": true,
     "incremental": false
