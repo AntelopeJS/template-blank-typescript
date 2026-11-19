@@ -23,14 +23,14 @@
     "@antelopejs/interface-core": ">=0.5.1 <0.6.0"
   },
   "devDependencies": {
-    "@antelopejs/core": "~1.23.3",
-    "@antelopejs/tooling-configs": ">=0.8.0 <0.9.0",
+    "@antelopejs/core": "~1.24.5",
+    "@antelopejs/tooling-configs": ">=0.8.4 <0.9.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.19.2",
-    "knip": "^6.44.1",
-    "oxfmt": "^0.66.0",
-    "oxlint": "1.81.0",
-    "oxlint-tsgolint": "^7.0.2005",
+    "knip": "^6.46.1",
+    "oxfmt": "^0.79.0",
+    "oxlint": "1.94.0",
+    "oxlint-tsgolint": "^7.0.2007",
     "rimraf": "^6.1.4",
     "typescript": "^5.9.3"
   },
