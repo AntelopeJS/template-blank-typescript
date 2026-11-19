@@ -23,7 +23,7 @@
     "noUnusedParameters": true,
     "rootDir": "src"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/package.json"],
   "references": [
     {
       "path": "./tsconfig.config.json"
