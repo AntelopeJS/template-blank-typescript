@@ -5,6 +5,7 @@ An AntelopeJS module in TypeScript, created from the Blank Typescript template (
 ## Layout
 
 - `src/index.ts` exports the `construct`, `start`, `stop` and `destroy` lifecycle hooks. `tsc` compiles `src/` into `dist/`, and `antelopeJs.baseUrl` in `package.json` points the runtime at `dist`.
+- `package.json` has `"type": "module"` so Node loads the ESM tool configs without a warning. The core `require`s the module, so `src/package.json` (`"type": "commonjs"`, emitted to `dist/package.json` because `tsconfig.json` includes it) keeps `dist` CommonJS.
 - `antelope.config.ts` is written by `ajs project init` and loads the module from the project root. `antelope.test.ts` is the `antelopeJs.test` config. Both name the module `antelopejs-module`: rename it there too when you rename it in `package.json`.
 
 ## Versioning
