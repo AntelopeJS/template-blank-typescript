@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       '@antelopejs/interface-core':
-        specifier: '>=0.5.1 <0.6.0'
-        version: 0.5.1
+        specifier: '>=0.5.4 <0.6.0'
+        version: 0.5.4
     devDependencies:
       '@antelopejs/core':
-        specifier: ~1.24.5
-        version: 1.24.8
+        specifier: ~1.24.9
+        version: 1.24.9
       '@antelopejs/tooling-configs':
-        specifier: ^0.10.7
-        version: 0.10.7(knip@6.46.1)(oxfmt@0.79.0)(oxlint@1.94.0(oxlint-tsgolint@7.0.2008))
+        specifier: ^0.10.9
+        version: 0.10.9(knip@6.46.1)(oxfmt@0.79.0)(oxlint@1.94.0(oxlint-tsgolint@7.0.2008))
       '@types/mocha':
         specifier: ^10.0.10
         version: 10.0.10
@@ -45,19 +45,16 @@ importers:
 
 packages:
 
-  '@antelopejs/core@1.24.8':
-    resolution: {integrity: sha512-zEGT+Xlirpl3yFOgPFd6zCP30WNp83kQrRnZuwQRAvaUjvKtbQjL3YHoNolMOJxAwIzaeKuT6d5KXXyR8shNcA==}
+  '@antelopejs/core@1.24.9':
+    resolution: {integrity: sha512-VjqlnHgIZVLvQqyx6PyzsWEMpVV0H2ZRIK63wmbFzRl2EjebIXEwKeo5xZ+80B00HEBNd3vCXprvnL0LTar1qA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
-
-  '@antelopejs/interface-core@0.5.1':
-    resolution: {integrity: sha512-ON/7TYA1yyT8UznzKi6vnwyjRU3byNE0OcFXBmf8dE/dqp8hKjeWHVyA2EUPOngmEimCLw4idZqOS5DJqMJx3g==}
 
   '@antelopejs/interface-core@0.5.4':
     resolution: {integrity: sha512-5IzF8eGvXugI5KNHj2q+ux3J5AE09Sagul4Sl1k2FFRlfm7WSRE1uzmjL8CT2cqJvWExqW6SGX17InOddI/t/g==}
 
-  '@antelopejs/tooling-configs@0.10.7':
-    resolution: {integrity: sha512-13abD0BhsR9RF6LQoYYKa+XBknlmcrZVB6iW3BwdfHKu6pPG4ClhAQCLJSSPYtbTMuvNU4imI+dVFSB78TdTnQ==}
+  '@antelopejs/tooling-configs@0.10.9':
+    resolution: {integrity: sha512-h5ArKEzfWyVDSCdtMGxIBX0EiCuLLb9bA4Gnlc7qlfppCB/ttjFSE787w+WD9rchgfZjKB26q94HIWqgrCVeIA==}
     engines: {node: '>=22.18.0'}
     hasBin: true
     peerDependencies:
@@ -65,8 +62,8 @@ packages:
       eslint-plugin-perfectionist: '>=5.0.0'
       knip: '>=6.0.0'
       mongodb-memory-server: '>=10.0.0'
-      oxfmt: ^0.66.0 || ^0.77.0 || ^0.79.0
-      oxlint: 1.81.0 || 1.94.0
+      oxfmt: ^0.66.0 || ^0.77.0 || ^0.79.0 || ^0.80.0
+      oxlint: 1.81.0 || 1.94.0 || 1.95.0
       pixelmatch: '>=7.0.0'
       playwright-core: '>=1.56.0'
       sharp: '>=0.34.0'
@@ -623,8 +620,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@oxlint/plugins@1.94.0':
-    resolution: {integrity: sha512-YT6htikBOBQ00XDxZpRZLZ0anEDo7h9s4+YvjRU0/Ng/cLd0D6SZQ3tsms4g/GDer/z8UKlegC5iptEfyRXJcw==}
+  '@oxlint/plugins@1.95.0':
+    resolution: {integrity: sha512-wb81nObfxWVASxtMQknyL4A387XDVuSIgpL1/wlhWzGpWLAGMzEvI+xWXJ242Bk8qqAmgDwG6ejetKnLISTGGw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   '@pkgjs/parseargs@0.11.0':
@@ -1238,11 +1235,6 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
-  semver@7.8.5:
-    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.8.6:
     resolution: {integrity: sha512-9lpSSU4Mly3mrtruwLs1eLK6+gzbzqeBFwRNjIjE+9LuDpWdYctrQlQ3ej1Ilgi7gknpsTRnPoLP8DpCHqHIJw==}
     engines: {node: '>=10'}
@@ -1419,7 +1411,7 @@ packages:
 
 snapshots:
 
-  '@antelopejs/core@1.24.8':
+  '@antelopejs/core@1.24.9':
     dependencies:
       '@antelopejs/interface-core': 0.5.4
       '@clack/prompts': 1.9.0
@@ -1436,20 +1428,16 @@ snapshots:
       typescript: 5.9.3
       yaml: 2.9.1
 
-  '@antelopejs/interface-core@0.5.1':
-    dependencies:
-      reflect-metadata: 0.2.2
-
   '@antelopejs/interface-core@0.5.4':
     dependencies:
       reflect-metadata: 0.2.2
 
-  '@antelopejs/tooling-configs@0.10.7(knip@6.46.1)(oxfmt@0.79.0)(oxlint@1.94.0(oxlint-tsgolint@7.0.2008))':
+  '@antelopejs/tooling-configs@0.10.9(knip@6.46.1)(oxfmt@0.79.0)(oxlint@1.94.0(oxlint-tsgolint@7.0.2008))':
     dependencies:
-      '@oxlint/plugins': 1.94.0
+      '@oxlint/plugins': 1.95.0
       dts-bundle-generator: 9.5.1
       minimatch: 10.2.6
-      semver: 7.8.5
+      semver: 7.8.6
       typescript: 6.0.3
       yaml: 2.9.1
     optionalDependencies:
@@ -1776,7 +1764,7 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.94.0':
     optional: true
 
-  '@oxlint/plugins@1.94.0': {}
+  '@oxlint/plugins@1.95.0': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -2415,8 +2403,6 @@ snapshots:
   safe-buffer@5.1.2: {}
 
   safe-buffer@5.2.1: {}
-
-  semver@7.8.5: {}
 
   semver@7.8.6: {}
 
