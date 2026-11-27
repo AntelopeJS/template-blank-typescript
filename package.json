@@ -21,11 +21,11 @@
     "suppressions:update": "antelopejs-suppressions --update"
   },
   "dependencies": {
-    "@antelopejs/interface-core": ">=0.5.1 <0.6.0"
+    "@antelopejs/interface-core": ">=0.5.4 <0.6.0"
   },
   "devDependencies": {
-    "@antelopejs/core": "~1.24.5",
-    "@antelopejs/tooling-configs": "^0.10.7",
+    "@antelopejs/core": "~1.24.9",
+    "@antelopejs/tooling-configs": "^0.10.9",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.19.2",
     "knip": "^6.46.1",
