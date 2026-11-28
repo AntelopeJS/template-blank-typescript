@@ -28,8 +28,6 @@ jobs:
       test-job: true
       affected-tests: true
       nightly: ${{ inputs.nightly == true }}
-      docs-files: |
-        README.md
   renovate-sync:
     if: >-
       github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/') && github.event.pull_request.head.repo.full_name == github.repository

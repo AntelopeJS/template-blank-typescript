@@ -9,7 +9,7 @@ CI runs every check on every pull request, and the merge queue runs them again o
 
 ## Setup
 
-Once per checkout: `pnpm install --frozen-lockfile`. It needs Node 24 (`.nvmrc`) and pnpm 10.34.9 (`packageManager` in `package.json`, through corepack). The install also installs the lefthook commit hook.
+Once per checkout: `pnpm install --frozen-lockfile`. It needs Node 24 (`.nvmrc`) and pnpm 10.34.9 (`packageManager` in `package.json`, through corepack).
 
 ## What to run for your change
 
@@ -21,8 +21,8 @@ Once per checkout: `pnpm install --frozen-lockfile`. It needs Node 24 (`.nvmrc`)
 | `antelope.test.ts`, `tsconfig*.json`, `src/package.json` | `pnpm test -f test/example.test.ts`: it compiles the module, loads it in the core and runs the test against `dist`. |
 | A dependency in `package.json` | `pnpm install`, commit `pnpm-lock.yaml`, then `pnpm run knip`. Keep every `@antelopejs/*` range below the next minor of its floor, as `AGENTS.md` says. |
 | A lint directive, `@ts-expect-error` or `SAFETY:` comment | `pnpm run suppressions`. After you remove one, run `pnpm run suppressions:update` and commit `guardrails.suppressions.json`. |
-| A file `antelopejs-sync` writes (`.github/workflows/ci.yml`, `lefthook.yml`, the Guardrails block of `AGENTS.md`, the `scripts` it owns, `.agents/skills/technical-writing`, `.agents/skills/unslop`) | Nothing by hand. Bump `@antelopejs/tooling-configs`, run `pnpm run sync`, then `pnpm run sync:check`. |
-| `README.md` or another doc | The lint and format row. CI's `Check documentation` step checks `README.md`. |
+| A file `antelopejs-sync` writes (`.github/workflows/ci.yml`, the Guardrails block of `AGENTS.md`, the `scripts` it owns, the tool configs, `guardrails.suppressions.json`) | Nothing by hand. Bump `@antelopejs/tooling-configs`, run `pnpm run sync`, then `pnpm run sync:check`. |
+| `README.md` or another doc | The lint and format row. |
 
 ## Tools
 
@@ -40,7 +40,7 @@ Do not run these locally. `.github/workflows/ci.yml` calls `AntelopeJS/.github/.
 
 - `pnpm run checks` and the full test suite: the `Node .nvmrc` job, on every pull request and in the merge queue.
 - The steps that read the npm registry (`dependency:ranges`, `lockfile:module-peers`, `readme:version`, `published:types`): the merge queue and the nightly run only.
-- The pull request title check, the documentation check of `README.md`, and the check that the module locks are committed.
+- The pull request title check and the check that the module locks are committed.
 - Windows (`Node .nvmrc on Windows`) and `Stress`: the nightly run, at 02:17 UTC.
 
 When a CI job fails, read its log, reproduce that one check or test file with its row above, fix it, and push.
