@@ -15,14 +15,14 @@ Once per checkout: `pnpm install --frozen-lockfile`. It needs Node 24 (`.nvmrc`)
 
 | You changed | Run |
 | --- | --- |
-| Any file | `pnpm exec oxlint <files>` and `pnpm exec oxfmt --check <files>` on the files you changed. |
+| Any file | `pnpm exec oxlint <files>` and `pnpm exec oxfmt --check --no-error-on-unmatched-pattern <files>` on the files you changed. The flag lets the format check pass on files `oxfmt.config.ts` ignores, such as the skills under `.agents/skills`. |
 | `src/` | `pnpm run typecheck`, which runs on the whole project in about a second, then `pnpm test -f test/example.test.ts`. |
 | A test under `test/` | `pnpm test -f test/<name>.test.ts`. No type check covers `test/`, so read the test's output, not only its exit code. |
 | `antelope.test.ts`, `tsconfig*.json`, `src/package.json` | `pnpm test -f test/example.test.ts`: it compiles the module, loads it in the core and runs the test against `dist`. |
 | A dependency in `package.json` | `pnpm install`, commit `pnpm-lock.yaml`, then `pnpm run knip`. Keep every `@antelopejs/*` range below the next minor of its floor, as `AGENTS.md` says. |
 | A lint directive, `@ts-expect-error` or `SAFETY:` comment | `pnpm run suppressions`. After you remove one, run `pnpm run suppressions:update` and commit `guardrails.suppressions.json`. |
 | A file `antelopejs-sync` writes (`.github/workflows/ci.yml`, `lefthook.yml`, the Guardrails block of `AGENTS.md`, the `scripts` it owns, `.agents/skills/technical-writing`, `.agents/skills/unslop`) | Nothing by hand. Bump `@antelopejs/tooling-configs`, run `pnpm run sync`, then `pnpm run sync:check`. |
-| `README.md` or another doc | The lint and format row. CI's `Check documentation` step checks the code blocks of `README.md`. |
+| `README.md` or another doc | The lint and format row. CI's `Check documentation` step checks `README.md`. |
 
 ## Tools
 
