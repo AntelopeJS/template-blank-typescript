@@ -15,11 +15,10 @@
     "knip": "knip",
     "checks": "antelopejs-checks",
     "size": "antelopejs-check-size",
-    "sync": "antelopejs-sync",
-    "sync:check": "antelopejs-sync --check",
+    "sync": "antelopejs-sync --profile template",
+    "sync:check": "antelopejs-sync --profile template --check",
     "suppressions": "antelopejs-suppressions",
-    "suppressions:update": "antelopejs-suppressions --update",
-    "prepare": "if [ -e .git ] && command -v git >/dev/null 2>&1 && command -v lefthook >/dev/null 2>&1 && GIT_DIR=.git GIT_WORK_TREE=. git rev-parse --git-dir >/dev/null 2>&1; then GIT_DIR=.git GIT_WORK_TREE=. lefthook install; fi"
+    "suppressions:update": "antelopejs-suppressions --update"
   },
   "dependencies": {
     "@antelopejs/interface-core": ">=0.5.4 <0.6.0"
@@ -30,7 +29,6 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.19.2",
     "knip": "^6.46.1",
-    "lefthook": "^2.2.2",
     "oxfmt": "^0.80.0",
     "oxlint": "1.95.0",
     "oxlint-tsgolint": "^7.0.2007",
